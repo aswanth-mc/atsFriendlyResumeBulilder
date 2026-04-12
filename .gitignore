@@ -1,0 +1,27 @@
+# --- Python / Virtual Environment ---
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Flask / Secrets ---
+.env
+instance/
+.pytest_cache/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# --- Project Specific ---
+# We ignore the actual generated PDFs, but keep the folder structure
+exports/*.pdf
+!exports/.gitkeep
