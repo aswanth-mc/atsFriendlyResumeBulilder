@@ -1,0 +1,28 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#form-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#preview-section {
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-paper {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
