@@ -26,3 +26,53 @@ body {
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+#form-section form {
+background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    border: 1px solid #eef0f2;
+}
+#form-section fieldset {
+    margin-bottom: 1.5rem;
+}
+
+/* Target the fieldset */
+.field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem; /* Clean spacing between inputs */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Make the Legend look nice */
+.field-group legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+}
+
+/* Make the Textarea and the Legend span both columns */
+#professional-summary {
+    grid-column: span 2; 
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Remove the effect of <br> tags if you don't want to delete them manually */
+.field-group br {
+    display: none;
+}
+
+/* Base styling for inputs to make them look uniform */
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; /* Ensures they fill their half of the grid */
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
