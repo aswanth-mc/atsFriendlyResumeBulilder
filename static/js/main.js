@@ -1,5 +1,5 @@
+// select input elements
 const nameInput = document.getElementById('name-input');
-const previewName = document.getElementById('preview-name');
 const professionalTitleInput = document.getElementById('professional-title');
 const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
@@ -8,6 +8,9 @@ const linkedinInput = document.getElementById('linkedin');
 const githubInput = document.getElementById('github');
 const websiteInput = document.getElementById('website');
 const professionalSummaryInput = document.getElementById('professional-summary');
+
+// select preview elements
+const previewName = document.getElementById('preview-name');
 const previewTitle = document.getElementById('preview-title');
 const previewEmail = document.getElementById('preview-email');
 const previewPhone = document.getElementById('preview-phone');
@@ -18,15 +21,22 @@ const previewWebsite = document.getElementById('preview-website');
 const previewSummary = document.getElementById('preview-summary');
 
 
-nameInput.addEventListener('input',() =>{
-    previewName.textContent = nameInput.value
-    previewTitle.textContent = professionalTitleInput.value
-    previewEmail.textContent = emailInput.value
-    previewPhone.textContent = phoneInput.value
-    previewLocation.textContent = locationInput.value
-    previewLinkedin.textContent = linkedinInput.value
-    previewGithub.textContent = githubInput.value
-    previewWebsite.textContent = websiteInput.value
-    previewSummary.textContent = professionalSummaryInput.value
+const fildMapping = [
+    {input:nameInput, preview:previewName},
+    {input:professionalTitleInput, preview:previewTitle},
+    {input:emailInput, preview:previewEmail},
+    {input:phoneInput, preview:previewPhone},
+    {input:locationInput, preview:previewLocation},
+    {input:linkedinInput, preview:previewLinkedin},
+    {input:githubInput, preview:previewGithub},
+    {input:websiteInput, preview:previewWebsite},
+    {input:professionalSummaryInput, preview:previewSummary}
+]
 
+fildMapping.forEach(item => {
+    if(item.input && item.preview) {
+        item.input.addEventListener('input', () => {
+            item.preview.textContent = item.input.value;
+        });     
+    }
 })
