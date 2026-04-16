@@ -75,4 +75,12 @@ input {
     font-size: 14px;
     width: 100%; /* Ensures they fill their half of the grid */
     box-sizing: border-box; /* Prevents padding from breaking width */
+} 
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
