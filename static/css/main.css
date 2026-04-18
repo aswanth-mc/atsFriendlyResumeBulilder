@@ -84,3 +84,45 @@ textarea {
     width: 100%;
     box-sizing: border-box;
 }
+
+/* Layout for each Education entry */
+.edu-entry {
+    margin-bottom: 1rem;
+}
+
+/* Flexbox to push Date to the right */
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.edu-header strong {
+    font-size: 1.1rem;
+    color: #111;
+}
+
+.edu-date {
+    font-weight: 600;
+    color: #444;
+}
+
+.edu-degree {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.edu-location {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Horizontal line below section headings */
+.resume-section hr {
+    border: 0;
+    border-top: 2px solid #333;
+    margin: 5px 0 12px 0;
+}
