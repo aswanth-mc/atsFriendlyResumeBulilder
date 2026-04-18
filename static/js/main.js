@@ -40,7 +40,12 @@ const fildMapping = [
     {input:linkedinInput, preview:previewLinkedin},
     {input:githubInput, preview:previewGithub},
     {input:websiteInput, preview:previewWebsite},
-    {input:professionalSummaryInput, preview:previewSummary}
+    {input:professionalSummaryInput, preview:previewSummary},
+    {input:jobTitleInput, preview:previewJobTitle},
+    {input:companyInput, preview:previewCompany},
+    {input:startDateInput, preview:previewStartDate},
+    {input:endDateInput, preview:previewEndDate},
+    {input:jobDescriptionInput, preview:previewJobDescription}
 ]
 
 fildMapping.forEach(item => {
