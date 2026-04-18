@@ -8,6 +8,11 @@ const linkedinInput = document.getElementById('linkedin');
 const githubInput = document.getElementById('github');
 const websiteInput = document.getElementById('website');
 const professionalSummaryInput = document.getElementById('professional-summary');
+const jobTitleInput = document.getElementById('job-title');
+const companyInput = document.getElementById('company-name');
+const startDateInput = document.getElementById('start-date');
+const endDateInput = document.getElementById('end-date');
+const jobDescriptionInput = document.getElementById('job-description');
 
 // select preview elements
 const previewName = document.getElementById('preview-name');
@@ -19,6 +24,11 @@ const previewLinkedin = document.getElementById('preview-linkedin');
 const previewGithub = document.getElementById('preview-github');
 const previewWebsite = document.getElementById('preview-website');
 const previewSummary = document.getElementById('preview-summary');
+const previewJobTitle = document.getElementById('preview-job-title');
+const previewCompany = document.getElementById('preview-company');
+const previewStartDate = document.getElementById('preview-start-date');
+const previewEndDate = document.getElementById('preview-end-date');
+const previewJobDescription = document.getElementById('preview-job-description');
 
 
 const fildMapping = [
