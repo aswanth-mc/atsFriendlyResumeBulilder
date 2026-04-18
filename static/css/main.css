@@ -112,3 +112,41 @@ input[type="date"] {
     border-radius: 4px;
     font-family: inherit;
 }
+
+.job-header {
+    display: flex;
+    justify-content: space-between; /* Pushes Title to left, Date to right */
+    align-items: baseline;
+}
+
+.job-entry {
+    margin-bottom: 15px;
+}
+
+.company-name {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.responsibilities-list {
+    margin: 0;
+    padding-left: 20px; /* Standard bullet indentation */
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.resume-section h3 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.resume-section hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+
+ 
