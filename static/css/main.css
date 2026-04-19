@@ -85,39 +85,7 @@ textarea {
     box-sizing: border-box;
 }
 
-/* The container holding your education items */
-/* The container for the 2x2 grid */
-/* Container for the inputs */
-.education-row {
-    display: flex;      /* Aligns items horizontally */
-    gap: 10px;          /* Space between boxes */
-    margin-bottom: 15px;
-}
 
-/* Make each input take equal width */
-.education-row input {
-    flex: 1; 
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Style for the 'Add Education' button */
-.add-btn {
-    background-color: #3b5d80; /* Blue color from your image */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-
-.add-btn:hover {
-    background-color: #2d4761;
-}
-/* Horizontal line below section headings */
 .resume-section hr {
     border: 0;
     border-top: 2px solid #333;
