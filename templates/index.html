@@ -42,22 +42,28 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset>
-                <legend>Education</legend>
-                <input type="text" id="school-input" placeholder="school/university">
-                <input type="text" id="degree-input" placeholder="Degree">
-                <div class="date-group">
-                    <div class="date-field">
-                        <label>Start Date</label>
-                        <input type="date" id="start-date">
-                    </div>
-                    <div class="date-field">
-                        <label>End Date</label>
-                        <input type="date" id="end-date">
-                    </div>
+            <fieldset id="education-section">
+    <legend>Education</legend>
+    
+    <div id="education-list">
+        <div class="education-entry">
+            <input type="text" placeholder="school/university">
+            <input type="text" placeholder="Degree">
+            <div class="date-group">
+                <div class="date-field">
+                    <label>Start Date</label>
+                    <input type="date">
                 </div>
-                <button type="button" class="add-btn" id="add-edu-btn">Add Education</button>
-            </fieldset>
+                <div class="date-field">
+                    <label>End Date</label>
+                    <input type="date">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="add-btn" id="add-edu-btn">Add Education</button>
+</fieldset> 
         </form>
     </main>
     <aside id="preview-section">
