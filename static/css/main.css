@@ -86,28 +86,36 @@ textarea {
 }
 
 /* The container holding your education items */
-.education-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* This creates the 2-column layout */
-    gap: 15px; /* Adds space between the boxes */
+/* The container for the 2x2 grid */
+/* Container for the inputs */
+.education-row {
+    display: flex;      /* Aligns items horizontally */
+    gap: 10px;          /* Space between boxes */
+    margin-bottom: 15px;
 }
 
-/* Optional: Styling the individual boxes to look like your screenshot */
-.education-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background: #fff;
-}
-
-.education-item input {
-    width: 60%; /* Adjusts the size of the input box inside the item */
-    padding: 8px;
+/* Make each input take equal width */
+.education-row input {
+    flex: 1; 
+    padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the 'Add Education' button */
+.add-btn {
+    background-color: #3b5d80; /* Blue color from your image */
+    color: white;
+    border: none;
+    padding: 8px 16px;
     border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #2d4761;
 }
 /* Horizontal line below section headings */
 .resume-section hr {
