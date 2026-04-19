@@ -9,6 +9,12 @@ const githubInput = document.getElementById('github');
 const websiteInput = document.getElementById('website');
 const professionalSummaryInput = document.getElementById('professional-summary');
 
+// Education Inputs
+const schoolInput = document.getElementById('school-input');
+const degreeInput = document.getElementById('degree-input');
+const startDateInput = document.getElementById('start-date');
+const endDateInput = document.getElementById('end-date');
+
 // select preview elements
 const previewName = document.getElementById('preview-name');
 const previewTitle = document.getElementById('preview-title');
@@ -19,46 +25,98 @@ const previewLinkedin = document.getElementById('preview-linkedin');
 const previewGithub = document.getElementById('preview-github');
 const previewWebsite = document.getElementById('preview-website');
 const previewSummary = document.getElementById('preview-summary');
+const schoolPreview = document.getElementById('preview-school');
+const degreePreview = document.getElementById('preview-degree');
+const datePreview = document.getElementById('preview-edu-date');
 
-
+// 1. Fixed Field Mapping logic
 const fildMapping = [
-    {input:nameInput, preview:previewName},
-    {input:professionalTitleInput, preview:previewTitle},
-    {input:emailInput, preview:previewEmail},
-    {input:phoneInput, preview:previewPhone},
-    {input:locationInput, preview:previewLocation},
-    {input:linkedinInput, preview:previewLinkedin},
-    {input:githubInput, preview:previewGithub},
-    {input:websiteInput, preview:previewWebsite},
-    {input:professionalSummaryInput, preview:previewSummary}
-]
+    { input: nameInput, preview: previewName },
+    { input: professionalTitleInput, preview: previewTitle },
+    { input: emailInput, preview: previewEmail },
+    { input: phoneInput, preview: previewPhone },
+    { input: locationInput, preview: previewLocation },
+    { input: linkedinInput, preview: previewLinkedin },
+    { input: githubInput, preview: previewGithub },
+    { input: websiteInput, preview: previewWebsite },
+    { input: professionalSummaryInput, preview: previewSummary }
+];
 
 fildMapping.forEach(item => {
-    if(item.input && item.preview) {
+    if (item.input && item.preview) {
         item.input.addEventListener('input', () => {
             item.preview.textContent = item.input.value;
-        });     
+        });
     }
-})
+});
 
+// 2. Add Education Button logic
 document.getElementById('add-edu-btn').addEventListener('click', function() {
-    
     const educationList = document.getElementById('education-list');
+    if (!educationList) return; // Safety check
+
     const newEntry = document.createElement('div');
     newEntry.className = 'education-entry';
     newEntry.innerHTML = `
-        <hr> <input type="text" placeholder="school/university">
-        <input type="text" placeholder="Degree">
+        <hr> 
+        <input type="text" placeholder="school/university" class="extra-school">
+        <input type="text" placeholder="Degree" class="extra-degree">
         <div class="date-group">
             <div class="date-field">
                 <label>Start Date</label>
-                <input type="date">
+                <input type="date" class="extra-start">
             </div>
             <div class="date-field">
                 <label>End Date</label>
-                <input type="date">
+                <input type="date" class="extra-end">
             </div>
         </div>
     `;
     educationList.appendChild(newEntry);
+    // NOTE: For a beginner, we won't sync these "extra" ones to the preview yet 
+    // to keep the code simple, but this prevents errors.
 });
+
+// 3. Date Formatting Function
+function formatDate(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    // Fixed: Use UTC options to avoid time-zone shifts
+    return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        year: 'numeric', 
+        timeZone: 'UTC' 
+    });
+}
+
+// 4. Update Date Range Logic
+function updateDateRange() {
+    if (!startDateInput || !endDateInput || !datePreview) return;
+    
+    const start = formatDate(startDateInput.value);
+    const end = formatDate(endDateInput.value);
+    
+    if (start || end) {
+        datePreview.textContent = `${start || "..." } - ${end || "Present"}`;
+    } else {
+        datePreview.textContent = "Graduation Date";
+    }
+}
+
+// 5. Education Event Listeners (Check if elements exist first)
+if (schoolInput && schoolPreview) {
+    schoolInput.addEventListener('input', () => {
+        schoolPreview.textContent = schoolInput.value || "University Name";
+    });
+}
+
+if (degreeInput && degreePreview) {
+    degreeInput.addEventListener('input', () => {
+        degreePreview.textContent = degreeInput.value || "Degree / Major";
+    });
+}
+
+if (startDateInput && endDateInput) {
+    startDateInput.addEventListener('input', updateDateRange);
+    endDateInput.addEventListener('input', updateDateRange);
+}
