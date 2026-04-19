@@ -75,6 +75,7 @@ document.getElementById('add-edu-btn').addEventListener('click', function() {
     educationList.appendChild(newEntry);
     // NOTE: For a beginner, we won't sync these "extra" ones to the preview yet 
     // to keep the code simple, but this prevents errors.
+    updateDateRange();
 });
 
 // 3. Date Formatting Function
@@ -91,13 +92,15 @@ function formatDate(dateString) {
 
 // 4. Update Date Range Logic
 function updateDateRange() {
+    // Check if the elements exist first to avoid errors
     if (!startDateInput || !endDateInput || !datePreview) return;
     
     const start = formatDate(startDateInput.value);
     const end = formatDate(endDateInput.value);
     
-    if (start || end) {
-        datePreview.textContent = `${start || "..." } - ${end || "Present"}`;
+    // If start date exists, show it. If end is missing, show "Present"
+    if (start) {
+        datePreview.textContent = `${start} - ${end || "Present"}`;
     } else {
         datePreview.textContent = "Graduation Date";
     }
