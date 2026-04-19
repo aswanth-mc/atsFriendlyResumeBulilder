@@ -40,3 +40,25 @@ fildMapping.forEach(item => {
         });     
     }
 })
+
+document.getElementById('add-edu-btn').addEventListener('click', function() {
+    
+    const educationList = document.getElementById('education-list');
+    const newEntry = document.createElement('div');
+    newEntry.className = 'education-entry';
+    newEntry.innerHTML = `
+        <hr> <input type="text" placeholder="school/university">
+        <input type="text" placeholder="Degree">
+        <div class="date-group">
+            <div class="date-field">
+                <label>Start Date</label>
+                <input type="date">
+            </div>
+            <div class="date-field">
+                <label>End Date</label>
+                <input type="date">
+            </div>
+        </div>
+    `;
+    educationList.appendChild(newEntry);
+});
