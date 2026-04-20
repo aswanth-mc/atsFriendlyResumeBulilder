@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon.png') }}">
     <title>Document</title>
 </head>
 <body>
@@ -27,43 +28,6 @@
                 <br>
                 <textarea name="professional-summary" id="professional-summary" placeholder="Professional Summary"></textarea>
             </fieldset>
-            <fieldset>
-                <legend>Work Experience</legend>
-                <input type="text" id="job-title" placeholder="Job Title">
-                <input type="text" id="company-name" placeholder="Company Name">
-                <div class="date-group">
-                    <div class="date-field">
-                        <label>Start Date</label>
-                        <input type="date" id="start-date">
-                    </div>
-                    <div class="date-field">
-                        <label>End Date</label>
-                        <input type="date" id="end-date">
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset id="education-section">
-    <legend>Education</legend>
-    
-    <div id="education-list">
-        <div class="education-entry">
-            <input type="text" id="school-input" placeholder="school/university">
-            <input type="text" id="degree-input" placeholder="Degree">
-            <div class="date-group">
-                <div class="date-field">
-                    <label>Start Date</label>
-                    <input type="date" id="start-date">
-                </div>
-                <div class="date-field">
-                    <label>End Date</label>
-                    <input type="date" id="end-date">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <button type="button" class="add-btn" id="add-edu-btn">Add Education</button>
-</fieldset> 
         </form>
     </main>
     <aside id="preview-section">
