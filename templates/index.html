@@ -28,6 +28,43 @@
                 <br>
                 <textarea name="professional-summary" id="professional-summary" placeholder="Professional Summary"></textarea>
             </fieldset>
+            <fieldset>
+                <legend>Work Experience</legend>
+                <input type="text" id="job-title" placeholder="Job Title">
+                <input type="text" id="company-name" placeholder="Company Name">
+                <div class="date-group">
+                    <div class="date-field">
+                        <label>Start Date</label>
+                        <input type="date" id="start-date">
+                    </div>
+                    <div class="date-field">
+                        <label>End Date</label>
+                        <input type="date" id="end-date">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="education-section">
+    <legend>Education</legend>
+    
+    <div id="education-list">
+        <div class="education-entry">
+            <input type="text" id="school-input" placeholder="school/university">
+            <input type="text" id="degree-input" placeholder="Degree">
+            <div class="date-group">
+                <div class="date-field">
+                    <label>Start Date</label>
+                    <input type="date" id="start-date">
+                </div>
+                <div class="date-field">
+                    <label>End Date</label>
+                    <input type="date" id="end-date">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="add-btn" id="add-edu-btn">Add Education</button>
+</fieldset> 
         </form>
     </main>
     <aside id="preview-section">
@@ -41,6 +78,18 @@
             <h2 id="preview-github">github url</h2>
             <h2 id="preview-website">personal website url</h2>
             <p id="preview-summary">professional summary</p>
+            <section class="resume-section">
+    <h3>Education</h3>
+    <hr>
+    <div class="edu-entry">
+        <div class="job-header">
+            <strong id="preview-school">University Name</strong>
+            <span id="preview-edu-date">Start Date - End Date</span>
+        </div>
+        <div id="preview-degree">Degree / Major</div>
+        <div id="preview-edu-location" style="font-size: 0.85rem; color: #666;">Location</div>
+    </div>
+</section>
         </div>
     </aside>
     
