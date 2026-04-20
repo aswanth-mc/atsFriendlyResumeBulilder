@@ -9,12 +9,6 @@ const githubInput = document.getElementById('github');
 const websiteInput = document.getElementById('website');
 const professionalSummaryInput = document.getElementById('professional-summary');
 
-// Education Inputs
-const schoolInput = document.getElementById('school-input');
-const degreeInput = document.getElementById('degree-input');
-const startDateInput = document.getElementById('start-date');
-const endDateInput = document.getElementById('end-date');
-
 // select preview elements
 const previewName = document.getElementById('preview-name');
 const previewTitle = document.getElementById('preview-title');
@@ -25,22 +19,19 @@ const previewLinkedin = document.getElementById('preview-linkedin');
 const previewGithub = document.getElementById('preview-github');
 const previewWebsite = document.getElementById('preview-website');
 const previewSummary = document.getElementById('preview-summary');
-const schoolPreview = document.getElementById('preview-school');
-const degreePreview = document.getElementById('preview-degree');
-const datePreview = document.getElementById('preview-edu-date');
 
 // 1. Fixed Field Mapping logic
 const fildMapping = [
-    { input: nameInput, preview: previewName },
-    { input: professionalTitleInput, preview: previewTitle },
-    { input: emailInput, preview: previewEmail },
-    { input: phoneInput, preview: previewPhone },
-    { input: locationInput, preview: previewLocation },
-    { input: linkedinInput, preview: previewLinkedin },
-    { input: githubInput, preview: previewGithub },
-    { input: websiteInput, preview: previewWebsite },
-    { input: professionalSummaryInput, preview: previewSummary }
-];
+    {input:nameInput, preview:previewName},
+    {input:professionalTitleInput, preview:previewTitle},
+    {input:emailInput, preview:previewEmail},
+    {input:phoneInput, preview:previewPhone},
+    {input:locationInput, preview:previewLocation},
+    {input:linkedinInput, preview:previewLinkedin},
+    {input:githubInput, preview:previewGithub},
+    {input:websiteInput, preview:previewWebsite},
+    {input:professionalSummaryInput, preview:previewSummary}
+]
 
 fildMapping.forEach(item => {
     if (item.input && item.preview) {
