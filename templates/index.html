@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/favicon.png') }}">
     <title>Document</title>
 </head>
 <body>
@@ -41,7 +42,6 @@
                         <input type="date" id="end-date">
                     </div>
                 </div>
-                <textarea placeholder="Key Responsibilities" class="full-width" id="job-description"></textarea>
             </fieldset>
         </form>
     </main>
@@ -56,20 +56,6 @@
             <h2 id="preview-github">github url</h2>
             <h2 id="preview-website">personal website url</h2>
             <p id="preview-summary">professional summary</p>
-            <h3>Work Experience</h3>
-    <hr>
-    
-    <div class="job-entry">
-        <div class="job-header">
-            <strong id="preview-job-title">Senior Web Developer</strong>
-            <span id="preview-job-dates">Jan 2023 — Present</span>
-        </div>
-        <div class="company-name" id="preview-company">Tech Solutions Inc.</div>
-        <ul class="responsibilities-list" id="preview-responsibilities">
-            <li>Developed full-stack web applications using Flask and React.</li>
-            <li>Optimized database queries in PostgreSQL, reducing load times by 30%.</li>
-        </ul>
-    </div>
         </div>
     </aside>
     
