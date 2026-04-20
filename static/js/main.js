@@ -90,22 +90,24 @@ function formatDate(dateString) {
     });
 }
 
-// 4. Update Date Range Logic
 function updateDateRange() {
-    // Check if the elements exist first to avoid errors
     if (!startDateInput || !endDateInput || !datePreview) return;
     
     const start = formatDate(startDateInput.value);
     const end = formatDate(endDateInput.value);
     
-    // If start date exists, show it. If end is missing, show "Present"
-    if (start) {
-        datePreview.textContent = `${start} - ${end || "Present"}`;
+    // Check if at least one date has been selected
+    if (start || end) {
+        // If start is missing but end exists, show "... - End Date"
+        // If start exists but end is missing, show "Start Date - Present"
+        const startText = start || "...";
+        const endText = end || "Present";
+        datePreview.textContent = `${startText} - ${endText}`;
     } else {
+        // Only show this if BOTH inputs are empty
         datePreview.textContent = "Graduation Date";
     }
 }
-
 // 5. Education Event Listeners (Check if elements exist first)
 if (schoolInput && schoolPreview) {
     schoolInput.addEventListener('input', () => {
