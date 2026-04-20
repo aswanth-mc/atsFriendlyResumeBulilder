@@ -1,19 +1,20 @@
-const fildMapping = [
-    {input:nameInput, preview:previewName},
-    {input:professionalTitleInput, preview:previewTitle},
-    {input:emailInput, preview:previewEmail},
-    {input:phoneInput, preview:previewPhone},
-    {input:locationInput, preview:previewLocation},
-    {input:linkedinInput, preview:previewLinkedin},
-    {input:githubInput, preview:previewGithub},
-    {input:websiteInput, preview:previewWebsite},
-    {input:professionalSummaryInput, preview:previewSummary}
-]
+export function initUiSync() {
+    const mappings = [
+        { input: 'name-input', preview: 'preview-name' },
+        { input: 'professional-title', preview: 'preview-title' },
+        { input: 'email', preview: 'preview-email' },
+        { input: 'phone', preview: 'preview-phone' },
+        { input: 'location', preview: 'preview-location' },
+        { input: 'professional-summary', preview: 'preview-summary' }
+    ];
 
-fildMapping.forEach(item => {
-    if (item.input && item.preview) {
-        item.input.addEventListener('input', () => {
-            item.preview.textContent = item.input.value;
-        });
-    }
-});
+    mappings.forEach(item => {
+        const inp = document.getElementById(item.input);
+        const pre = document.getElementById(item.preview);
+        if (inp && pre) {
+            inp.addEventListener('input', () => {
+                pre.textContent = inp.value || pre.getAttribute('data-placeholder');
+            });
+        }
+    });
+}
